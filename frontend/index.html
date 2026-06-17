@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Sales Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="mini-title">
+                SUPERSTORE ANALYTICS • AI GENERATED INSIGHT
+            </p>
+
+            <h1>
+                AI Sales Dashboard
+            </h1>
+
+            <p class="subtitle">
+                Interactive Sales Analytics & AI Business Insight
+            </p>
+<br>            <p class="subtitle">
+               by Muhammad Alfian handi Yudha
+            </p>
+        </div>
+
+    </section>
+
+    <!-- =========================
+         MAIN CONTAINER
+    ========================== -->
+
+    <div class="container">
+
+        <!-- =========================
+             KPI SECTION
+        ========================== -->
+
+        <section class="kpi-grid">
+
+            <div class="kpi-card">
+
+                <p>Total Sales</p>
+
+                <h2 id="sales">
+                    Loading...
+                </h2>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <p>Total Profit</p>
+
+                <h2 id="profit">
+                    Loading...
+                </h2>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <p>Total Orders</p>
+
+                <h2 id="orders">
+                    Loading...
+                </h2>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <p>Profit Margin</p>
+
+                <h2 id="margin">
+                    Loading...
+                </h2>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             INSIGHT SECTION
+        ========================== -->
+
+        <section class="insight-wrapper">
+
+            <!-- LEFT -->
+
+            <div class="left-column">
+
+                <div class="card">
+
+                    <p class="section-label">
+                        AI NARRATIVE
+                    </p>
+
+                    <h2>
+                        Sales besar belum tentu menghasilkan profit tinggi
+                    </h2>
+
+                    <p class="description">
+                        AI mendeteksi bahwa beberapa territory memiliki volume
+                        penjualan tinggi namun margin profit rendah akibat
+                        diskon yang terlalu besar dan tingginya biaya produk.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <p class="section-label red">
+                        ANOMALI TERDETEKSI
+                    </p>
+
+                    <div class="anomaly-box">
+                        ⚠ Profit margin menurun di beberapa territory
+                    </div>
+
+                    <div class="anomaly-box">
+                        ⚠ Sales tinggi ≠ profit tinggi
+                    </div>
+
+                    <div class="anomaly-box">
+                        ⚠ Produk tertentu menghasilkan low-profit
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="right-column">
+
+                <div class="card">
+
+                    <p class="section-label blue">
+                        REKOMENDASI AI
+                    </p>
+
+                    <ul class="recommendation-list">
+
+                        <li>
+                            Fokus pada produk high-margin
+                        </li>
+
+                        <li>
+                            Kurangi diskon berlebih
+                        </li>
+
+                        <li>
+                            Optimalkan territory profitable
+                        </li>
+
+                        <li>
+                            Tingkatkan strategi cross-selling
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="card">
+
+                    <p class="section-label">
+                        FILTER ANALYTICS
+                    </p>
+
+                    <select id="categoryFilter">
+                        <option>All Category</option>
+                    </select>
+                    
+                    <select id="territoryFilter">
+                        <option>All Territory</option>
+                    </select>
+                    
+                    <select id="segmentFilter">
+                        <option>All Segment</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             TABLEAU SECTION
+        ========================== -->
+
+        <section class="tableau-section">
+
+            <div class="card tableau-card">
+
+                <p class="section-label blue">
+                    TABLEAU DASHBOARD
+                </p>
+
+                <h2>
+                    Interactive Tableau Analytics
+                </h2>
+
+                <div class="tableau-container">
+
+                    <iframe
+                        src="https://public.tableau.com/views/DashboardEASDavis2026/Dashboard1?:showVizHome=no"
+                        width="100%"
+                        height="900"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             AI ASSISTANT
+        ========================== -->
+
+        <section class="assistant-section">
+
+            <div class="card">
+
+                <p class="section-label blue">
+                    AI BUSINESS ASSISTANT
+                </p>
+
+                <h2>
+                    Ask AI About Your Sales Data
+                </h2>
+
+                <textarea
+                    id="prompt"
+                    placeholder="Contoh: Territory mana yang paling profitable?"
+                ></textarea>
+
+                <button onclick="askAI()">
+                    Generate Insight
+                </button>
+
+                <div id="response">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
