@@ -18,6 +18,7 @@ Werkzeug==3.1.8
 flask
 flask-cors
 pandas
-requests
-gunicorn
 groq
+gunicorn
+python-dotenv
+requests
