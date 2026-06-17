@@ -6,9 +6,12 @@ import requests
 # ====================================
 # APP
 # ====================================
+from groq import Groq
+import os
 
-app = Flask(__name__)
-CORS(app)
+client = Groq(
+    api_key=os.environ.get("GROQ_API_KEY")
+)
 
 # ====================================
 # LOAD DATA
@@ -143,7 +146,7 @@ def filters():
 # AI ANALYTICS
 # ====================================
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+# OLLAMA_URL = "http://localhost:11434/api/generate"
 
 @app.route("/ask-ai", methods=["POST"])
 def ask_ai():
@@ -236,20 +239,28 @@ PERTANYAAN USER:
 {prompt}
 """
 
-    response = requests.post(
-        OLLAMA_URL,
-        json={
-            "model": "llama3",
-            "prompt": full_prompt,
-            "stream": False
+    from groq import Groq
+import os
+
+client = Groq(
+    api_key=os.environ.get("GROQ_API_KEY")
+)
+
+    chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": full_prompt
         }
-    )
+    ],
+    model="llama-3.3-70b-versatile"
+)
 
-    result = response.json()
+answer = chat_completion.choices[0].message.content
 
-    return jsonify({
-        "response": result["response"]
-    })
+return jsonify({
+    "response": answer
+})
 
 # ====================================
 # HOME

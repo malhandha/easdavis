@@ -20,3 +20,4 @@ flask-cors
 pandas
 requests
 gunicorn
+groq
