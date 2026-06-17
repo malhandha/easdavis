@@ -3,8 +3,7 @@
 // ====================================
 
 // LOCAL
-const API_URL = "http://127.0.0.1:5000";
-
+const API_URL = "https://easdavis-production.up.railway.app";
 // ONLINE
 // const API_URL = "https://backend-kamu.up.railway.app";
 
